@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import PropTypes from 'prop-types';
 
 function App() {
   const books = [
@@ -17,14 +16,16 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <div>
-        <title>小遣い帳</title>
+        <h1>小遣い帳</h1>
         <table className="book">
           <thead>
             <tr><th>日付</th><th>項目</th><th>入金</th><th>出金</th></tr>
           </thead>
           <tbody>
-            {books.map((book) =>
-            <MoneyBookItem book={book} key={book.date + book.item} /> )}
+            <tr><td>{books[0].date}</td><td>{books[0].item}</td><td>{books[0].amount}</td><td></td></tr>
+            <tr><td>{books[1].date}</td><td>{books[1].item}</td><td></td><td>{books[1].amount}</td></tr>
+            <tr><td>{books[2].date}</td><td>{books[2].item}</td><td>{books[2].amount}</td><td></td></tr>
+            <tr><td>{books[3].date}</td><td>{books[3].item}</td><td></td><td>{books[3].amount}</td></tr>
           </tbody>
         </table>
         </div>
@@ -44,27 +45,4 @@ function App() {
   );
 }
 
-const MoneyBookItem = (props) => {
-  const {date, item, amount} = props.book
-  return (
-    <tr>
-      <td>{date}</td>
-      <td>{item}</td>
-      <td>{amount >= 0 ? amount : null}</td>
-      <td>{amount <= 0 ? -amount : null}</td>
-    </tr>
-  )
- 
-}
-MoneyBookItem.propTypes = {
-  book: PropTypes.object.isRequired
-}
-
-const Title = (props) => {
-  return (<h1>{props.children}</h1>)
-}
-
-Title.protoTypes = {
-  children: PropTypes.string
-}
 export default App;

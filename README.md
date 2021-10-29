@@ -1,4 +1,5 @@
 # Moneybook_app
+お金の管理ができるアプリです！
 
 ## 学んだこと
 - Nodo.jsやHomebrewなど、reactを扱うための環境構築を学んだ。
